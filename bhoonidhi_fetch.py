@@ -1,5 +1,9 @@
-from config import API_URL, RAW_DATA_FOLDER, PROCESSED_DATA_FOLDER, DEFAULT_CRS
+from pystac_client import Client
+from config import API_URL
 
-print("Bhoonidhi API:", API_URL)
-print("Raw data folder:", RAW_DATA_FOLDER)
-print("Default CRS:", DEFAULT_CRS)
+print("Connecting to Bhoonidhi STAC API...")
+
+catalog = Client.open(API_URL)
+
+print("Connection successful!")
+print("API:", API_URL)
